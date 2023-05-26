@@ -1,0 +1,9 @@
+# virtual environment files
+**/venv
+
+# secrets
+.env
+
+# IDE config
+.vscode/
+
