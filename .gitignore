@@ -3,7 +3,11 @@
 
 # secrets
 .env
+**/credentials.h
 
 # IDE config
 .vscode/
+
+# build files
+**/build/
 
