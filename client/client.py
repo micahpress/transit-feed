@@ -83,6 +83,9 @@ while True:
             lines_to_times[journey.line_id].append(journey.expected_departure_time.astimezone())
     # pprint.pprint(lines_to_times)
     # print(prepare_dict_for_displaying(lines_to_times))
-    requests.post("http://192.168.1.70:80", f"As of {datetime.datetime.now().strftime('%H:%M')}:\n" + prepare_dict_for_displaying(lines_to_times))
+    try:
+        requests.post("http://192.168.1.70:80", f"As of {datetime.datetime.now().strftime('%H:%M')}:\n" + prepare_dict_for_displaying(lines_to_times))
+    except requests.exceptions.ConnectionError as ce:
+        pass
     time.sleep(60)
 
